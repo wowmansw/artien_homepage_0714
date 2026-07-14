@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아티언 ARTIEN — 기업 캐릭터·인스타툰 제작/운영 스튜디오</title>
+<meta name="description" content="아티언은 기업 캐릭터와 인스타툰을 제작하고 운영하는 콘텐츠 스튜디오입니다. 캐릭터를 지속 가능한 콘텐츠 자산으로 만듭니다.">
+
+<!-- ▼ 검색 노출을 막고 싶으면 아래 주석(<!-- -->)을 풀어주세요 ▼ -->
+<!-- <meta name="robots" content="noindex, nofollow"> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+<style>
+  :root{
+    --ink:#241C15;
+    --ink-soft:#6E5F51;
+    --orange:#F5901F;
+    --orange-deep:#D9760A;
+    --cream:#FFF7EC;
+    --butter:#FBD85F;
+    --paper:#FFFFFF;
+    --line:#EFE2CE;
+    --shadow:0 10px 30px -12px rgba(120,80,20,.22);
+    --shadow-lift:0 20px 45px -18px rgba(120,80,20,.30);
+    --display:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+    --hand:'Jua',sans-serif;
+    --body:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,247,236,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:800;font-size:23px;letter-spacing:.5px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--orange);display:inline-block}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:15px;font-weight:600;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{font-family:var(--body);font-weight:700;font-size:14px;background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;transition:transform .15s,background .2s}
+  .nav-cta:hover{background:var(--orange-deep);transform:translateY(-1px)}
+
+  /* HERO */
+  .hero{padding:74px 0 40px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--hand);font-size:16px;color:var(--orange-deep);background:#fff;border:1.5px solid var(--butter);padding:6px 15px;border-radius:999px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  h1.hero-title{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.2vw,60px);line-height:1.12;letter-spacing:-.5px;margin-bottom:22px}
+  h1.hero-title .hl{color:var(--orange);position:relative;white-space:nowrap}
+  h1.hero-title .hl::after{content:"";position:absolute;left:-2%;right:-2%;bottom:6px;height:14px;background:var(--butter);z-index:-1;border-radius:3px;opacity:.65}
+  .hero-sub{font-size:clamp(16px,1.9vw,19px);color:var(--ink-soft);max-width:440px;margin-bottom:32px;font-weight:500}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{font-family:var(--body);font-weight:700;font-size:16px;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .2s,background .2s}
+  .btn-primary{background:var(--orange);color:#fff;padding:15px 26px;border-radius:999px;box-shadow:var(--shadow)}
+  .btn-primary:hover{background:var(--orange-deep);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+  .btn-primary .arw{transition:transform .2s}
+  .btn-primary:hover .arw{transform:translateX(4px)}
+  .btn-ghost{color:var(--ink);font-weight:600;font-size:15px;padding:14px 6px;border-bottom:2px solid transparent}
+  .btn-ghost:hover{border-bottom-color:var(--orange)}
+  .hero-panel{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:26px;padding:26px 26px 20px;box-shadow:var(--shadow-lift)}
+  .panel-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .panel-handle{font-family:var(--hand);font-size:14px;color:var(--ink-soft)}
+  .panel-dots{display:flex;gap:5px}
+  .panel-dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+  .panel-dots i:first-child{background:var(--orange);width:16px;border-radius:999px}
+  .chick-stage{background:var(--cream);border-radius:16px;padding:20px;display:flex;justify-content:center}
+  .chick{width:190px;height:auto;animation:bob 3.6s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
+  .speech{position:absolute;top:8px;right:-6px;background:var(--ink);color:#fff;font-family:var(--hand);font-size:15px;padding:9px 15px;border-radius:14px 14px 14px 2px;box-shadow:var(--shadow);transform:rotate(3deg);z-index:2}
+  .panel-caption{margin-top:14px;font-size:13.5px;color:var(--ink-soft);text-align:center}
+  .placeholder-tag{display:block;margin-top:6px;font-size:11px;color:var(--orange-deep);font-weight:700;letter-spacing:.3px}
+
+  /* STRIP */
+  .strip{background:var(--ink);color:#fff;padding:15px 0;overflow:hidden;white-space:nowrap;margin-top:34px}
+  .strip-track{display:inline-flex;gap:46px;animation:slide 26s linear infinite;font-family:var(--hand);font-size:16px;align-items:center}
+  .strip-track span{opacity:.9}
+  .strip-track .sep{color:var(--butter)}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* SECTION */
+  .sec{padding:84px 0}
+  .sec-head{max-width:680px;margin-bottom:46px}
+  .kicker{font-family:var(--hand);color:var(--orange-deep);font-size:17px;margin-bottom:12px}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(27px,3.6vw,40px);line-height:1.22;letter-spacing:-.5px}
+  h2 .hl{color:var(--orange)}
+  .sec-sub{margin-top:14px;color:var(--ink-soft);font-size:17px;font-weight:500}
+
+  /* PROBLEM */
+  .prob{background:var(--paper)}
+  .prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .prob-card{background:var(--cream);border:1.5px solid var(--line);border-radius:18px;padding:26px 26px 24px;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .prob-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--butter)}
+  .prob-ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+  .prob-card h3{font-size:19px;font-weight:800;margin-bottom:8px}
+  .prob-card p{color:var(--ink-soft);font-size:15px}
+  .prob-punch{margin-top:28px;background:var(--ink);color:#fff;border-radius:18px;padding:24px 28px;font-size:clamp(17px,2.2vw,21px);font-weight:700;text-align:center}
+  .prob-punch b{color:var(--butter)}
+
+  /* SOLUTION */
+  .sol-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+  .step{background:var(--paper);border-radius:20px;padding:30px 26px;border:2px solid var(--ink);position:relative}
+  .step .num{font-family:var(--display);font-weight:800;font-size:40px;color:var(--orange);line-height:1;margin-bottom:16px;display:block}
+  .step h3{font-size:20px;font-weight:800;margin-bottom:10px}
+  .step p{color:var(--ink-soft);font-size:15px}
+  .step .arrow{position:absolute;right:-24px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--orange);z-index:2;font-weight:900}
+  .step:last-child .arrow{display:none}
+
+  /* PROOF */
+  .proof{background:var(--paper)}
+  .proof-head{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+  .ig-badge{display:inline-flex;align-items:center;gap:9px;font-family:var(--hand);font-size:15px;color:var(--ink-soft);background:var(--cream);border:1.5px solid var(--line);padding:8px 16px;border-radius:999px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{background:var(--cream);border-radius:18px;padding:28px 22px;border:1.5px solid var(--line);text-align:left;transition:transform .2s,box-shadow .2s}
+  .stat:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .stat .lab{font-size:14px;color:var(--ink-soft);font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+  .stat .val{font-family:var(--display);font-weight:800;font-size:clamp(30px,4vw,44px);color:var(--ink);line-height:1}
+  .stat .val em{color:var(--orange);font-style:normal;font-size:.6em}
+  .proof-foot{margin-top:26px;text-align:center;font-size:clamp(15px,2vw,18px);font-weight:600;color:var(--ink-soft)}
+  .proof-foot b{color:var(--orange-deep)}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:start}
+  .founder{background:var(--paper);border:2px solid var(--ink);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+  .founder-top{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+  .avatar{width:66px;height:66px;border-radius:50%;background:var(--butter);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:26px;color:var(--ink);border:2px solid var(--ink)}
+  .founder-name{font-family:var(--display);font-weight:800;font-size:24px}
+  .founder-role{font-size:14px;color:var(--ink-soft);font-weight:600}
+  .founder ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .founder li{display:flex;gap:10px;font-size:15px;color:var(--ink-soft)}
+  .founder li::before{content:"✦";color:var(--orange);flex-shrink:0}
+  .why-cards{display:flex;flex-direction:column;gap:14px}
+  .why-card{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:22px 24px;display:flex;gap:18px;align-items:flex-start;transition:border-color .2s,transform .2s}
+  .why-card:hover{border-color:var(--butter);transform:translateX(4px)}
+  .why-emoji{font-size:26px;flex-shrink:0;line-height:1.3}
+  .why-card h3{font-size:17px;font-weight:800;margin-bottom:5px}
+  .why-card p{font-size:14.5px;color:var(--ink-soft)}
+
+  /* SERVICES */
+  .serv{background:var(--paper)}
+  .serv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .serv-card{border:2px solid var(--ink);border-radius:20px;padding:28px;background:var(--cream);position:relative;overflow:hidden;transition:transform .2s}
+  .serv-card:hover{transform:translateY(-4px)}
+  .serv-card::before{content:attr(data-n);position:absolute;top:-14px;right:6px;font-family:var(--display);font-weight:800;font-size:80px;color:#fff;opacity:.9;z-index:0}
+  .serv-card>*{position:relative;z-index:1}
+  .serv-tag{font-family:var(--hand);font-size:14px;color:var(--orange-deep);margin-bottom:9px}
+  .serv-card h3{font-size:20px;font-weight:800;margin-bottom:9px}
+  .serv-card p{font-size:15px;color:var(--ink-soft)}
+  .serv-pills{display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+  .pill{font-family:var(--hand);font-size:14px;background:var(--cream);border:1.5px solid var(--butter);color:var(--ink);padding:8px 18px;border-radius:999px}
+
+  /* REFERENCES */
+  .ref-note{font-size:13px;color:var(--orange-deep);font-weight:700;margin-bottom:16px}
+  .logo-wall{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:40px}
+  .logo-tile{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;height:78px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--ink);text-align:center;padding:8px;transition:border-color .2s,transform .2s;line-height:1.25}
+  .logo-tile:hover{border-color:var(--butter);transform:translateY(-3px)}
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:36px}
+  .case{background:var(--paper);border:2px solid var(--ink);border-radius:18px;overflow:hidden}
+  .case-img{height:120px;background:linear-gradient(135deg,var(--butter),var(--orange));display:flex;align-items:center;justify-content:center;font-family:var(--hand);color:#fff;font-size:16px;text-shadow:0 1px 4px rgba(0,0,0,.2);text-align:center;padding:0 10px}
+  .case-b{padding:20px 22px}
+  .case-b .who{font-family:var(--display);font-weight:800;font-size:18px;margin-bottom:8px}
+  .case-b p{font-size:14px;color:var(--ink-soft)}
+  .ref-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .rstat{background:var(--ink);color:#fff;border-radius:16px;padding:22px 18px;text-align:center}
+  .rstat .v{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,32px);color:var(--butter);line-height:1}
+  .rstat .l{font-size:13px;opacity:.85;margin-top:8px}
+
+  /* CTA */
+  .cta{background:var(--orange);color:#fff;text-align:center;overflow:hidden}
+  .cta h2{color:#fff}
+  .cta .kicker{color:#fff}
+  .pack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:720px;margin:40px auto 36px}
+  .pack{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.4);border-radius:18px;padding:26px;text-align:left;backdrop-filter:blur(4px)}
+  .pack .pt{font-family:var(--display);font-weight:800;font-size:22px;margin-bottom:10px}
+  .pack p{font-size:14.5px;opacity:.95}
+  .cta-actions{display:flex;flex-direction:column;align-items:center;gap:16px}
+  .btn-dark{background:var(--ink);color:#fff;padding:17px 34px;border-radius:999px;font-size:17px;box-shadow:var(--shadow-lift)}
+  .btn-dark:hover{background:#000;transform:translateY(-2px)}
+  .contact-line{font-family:var(--hand);font-size:17px}
+  .contact-line a{border-bottom:2px solid rgba(255,255,255,.6)}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#fff;padding:44px 0 34px}
+  .foot-in{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center}
+  .foot-brand{font-family:var(--display);font-weight:800;font-size:22px;display:flex;align-items:center;gap:9px}
+  .foot-brand .dot{width:10px;height:10px;border-radius:50%;background:var(--orange)}
+  .foot-meta{font-size:13.5px;opacity:.7;line-height:1.7}
+  .foot-links{display:flex;gap:22px;font-size:14px;opacity:.85}
+  .foot-links a:hover{color:var(--butter)}
+
+  /* REVEAL */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:30px}
+    .hero-panel{max-width:360px;margin:0 auto}
+    .prob-grid,.serv-grid,.pack-grid{grid-template-columns:1fr}
+    .sol-steps{grid-template-columns:1fr}
+    .step .arrow{display:none}
+    .stat-grid,.ref-stats{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr}
+    .logo-wall{grid-template-columns:repeat(3,1fr)}
+    .case-grid{grid-template-columns:1fr}
+    .nav-links{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><span class="dot"></span>아티언</a>
+    <div class="nav-links">
+      <a href="#proof">성과</a>
+      <a href="#services">서비스</a>
+      <a href="#refs">협업사례</a>
+      <a href="#contact">문의</a>
+    </div>
+    <a href="#contact" class="nav-cta">협업 문의하기</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">기업 캐릭터 · 인스타툰 스튜디오</span>
+      <h1 class="hero-title">캐릭터를 만드는 것과,<br><span class="hl">살아있게</span> 하는 건 다릅니다</h1>
+      <p class="hero-sub">기업 캐릭터·인스타툰 제작부터 월간 운영까지. 아티언은 캐릭터를 지속 가능한 콘텐츠 자산으로 만듭니다.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">협업 문의하기 <span class="arw">→</span></a>
+        <a href="#proof" class="btn btn-ghost">성과 먼저 보기</a>
+      </div>
+    </div>
+    <div class="reveal in">
+      <div class="hero-panel">
+        <div class="speech">오늘도 출근! 🐣</div>
+        <div class="panel-top">
+          <span class="panel-handle">@babp.toon</span>
+          <span class="panel-dots"><i></i><i></i><i></i></span>
+        </div>
+        <div class="chick-stage">
+          <svg class="chick" viewBox="0 0 200 210" xmlns="http://www.w3.org/2000/svg" aria-label="밥풀이 캐릭터 자리">
+            <ellipse cx="100" cy="200" rx="52" ry="8" fill="#00000010"/>
+            <path d="M70 185 l-8 18 M86 188 l-3 18" stroke="#E8890F" stroke-width="7" stroke-linecap="round"/>
+            <path d="M130 185 l8 18 M114 188 l3 18" stroke="#E8890F" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="100" cy="112" r="78" fill="#FBD85F"/>
+            <path d="M100 40 q-6 -16 8 -20 q-6 14 4 18Z" fill="#FBD85F"/>
+            <ellipse cx="46" cy="120" rx="16" ry="26" fill="#F7C93E"/>
+            <ellipse cx="154" cy="120" rx="16" ry="26" fill="#F7C93E"/>
+            <circle cx="80" cy="104" r="7.5" fill="#2A2018"/>
+            <circle cx="122" cy="104" r="7.5" fill="#2A2018"/>
+            <circle cx="82.5" cy="101" r="2.4" fill="#fff"/>
+            <circle cx="124.5" cy="101" r="2.4" fill="#fff"/>
+            <ellipse cx="66" cy="122" rx="11" ry="7" fill="#F6A94E" opacity=".7"/>
+            <ellipse cx="136" cy="122" rx="11" ry="7" fill="#F6A94E" opacity=".7"/>
+            <path d="M92 120 l16 0 l-8 11 Z" fill="#E8890F"/>
+          </svg>
+        </div>
+        <div class="panel-caption">
+          직장인 공감 인스타툰 · 팔로워 3.7만+
+          <span class="placeholder-tag">⚠ 임시 이미지 — 밥풀이 대표 PNG로 교체하세요</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>토스</span><span class="sep">✦</span><span>네이버웹툰</span><span class="sep">✦</span><span>서울특별시</span><span class="sep">✦</span><span>신협</span><span class="sep">✦</span><span>한국산업인력공단</span><span class="sep">✦</span><span>행정안전부</span><span class="sep">✦</span><span>온누리제약</span><span class="sep">✦</span><span>보훈공단</span><span class="sep">✦</span><span>국립농업박물관</span><span class="sep">✦</span><span>삼진제약</span><span class="sep">✦</span>
+    <span>토스</span><span class="sep">✦</span><span>네이버웹툰</span><span class="sep">✦</span><span>서울특별시</span><span class="sep">✦</span><span>신협</span><span class="sep">✦</span><span>한국산업인력공단</span><span class="sep">✦</span><span>행정안전부</span><span class="sep">✦</span><span>온누리제약</span><span class="sep">✦</span><span>보훈공단</span><span class="sep">✦</span><span>국립농업박물관</span><span class="sep">✦</span><span>삼진제약</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<section class="sec prob" id="problem">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">기업 캐릭터의 현실</div>
+      <h2>왜 많은 기업 캐릭터는 <span class="hl">실패</span>할까요?</h2>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card reveal"><div class="prob-ic">🎬</div><h3>콘텐츠 부재</h3><p>캐릭터는 있지만, 꾸준히 연재되는 콘텐츠가 없습니다.</p></div>
+      <div class="prob-card reveal"><div class="prob-ic">📣</div><h3>일회성 광고의 한계</h3><p>캠페인이 끝나면 효과도 함께 사라집니다.</p></div>
+      <div class="prob-card reveal"><div class="prob-ic">🔄</div><h3>담당자 의존 운영</h3><p>운영 주체가 바뀌면 채널의 힘도 약해집니다.</p></div>
+      <div class="prob-card reveal"><div class="prob-ic">💭</div><h3>페르소나 부족</h3><p>말투·세계관·스토리가 없어 팬덤이 쌓이지 않습니다.</p></div>
+    </div>
+    <div class="prob-punch reveal">문제는 디자인이 아니라, 캐릭터를 살아있게 만드는 <b>운영 모델의 부재</b>입니다.</div>
+  </div>
+</section>
+
+<section class="sec" id="solution">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">아티언의 해법</div>
+      <h2>기업 캐릭터를 <span class="hl">'콘텐츠 자산'</span>으로 전환합니다</h2>
+    </div>
+    <div class="sol-steps">
+      <div class="step reveal"><span class="num">01</span><h3>캐릭터 페르소나 설계</h3><p>브랜드 가치와 타깃에 맞는 성격·말투·세계관 정리</p><span class="arrow">→</span></div>
+      <div class="step reveal"><span class="num">02</span><h3>공감형 인스타툰 제작</h3><p>에피소드 기획, 콘티, 작화, 캡션까지 원스톱</p><span class="arrow">→</span></div>
+      <div class="step reveal"><span class="num">03</span><h3>월간 운영·팬덤 축적</h3><p>지속 연재로 브랜드 자산과 친밀도를 쌓기</p><span class="arrow">→</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec proof" id="proof">
+  <div class="wrap">
+    <div class="proof-head">
+      <div class="sec-head reveal" style="margin-bottom:0">
+        <div class="kicker">검증된 흥행 IP</div>
+        <h2>광고 없이 성장한 IP, <span class="hl">밥풀이툰</span></h2>
+        <p class="sec-sub">직장인 공감형 IP가 인바운드 협업 수요를 만듭니다</p>
+      </div>
+      <span class="ig-badge reveal">📷 Instagram @babp.toon</span>
+    </div>
+    <div class="stat-grid">
+      <div class="stat reveal"><div class="lab">👥 팔로워</div><div class="val">3.7<em>만+</em></div></div>
+      <div class="stat reveal"><div class="lab">👁 월 조회수</div><div class="val">3,400<em>만</em></div></div>
+      <div class="stat reveal"><div class="lab">🎞 릴스 최고</div><div class="val">182<em>만</em></div></div>
+      <div class="stat reveal"><div class="lab">📈 광고툰 평균</div><div class="val">100<em>만+</em></div></div>
+    </div>
+    <p class="proof-foot reveal">콘텐츠 흥행 <b>→</b> 인바운드 문의 <b>→</b> 수익화로 이어지는 구조를 실제로 검증했습니다.</p>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">왜 아티언인가</div>
+      <h2>흥행하는 IP를 <span class="hl">3연속</span>으로 만든 팀</h2>
+    </div>
+    <div class="why-grid">
+      <div class="founder reveal">
+        <div class="founder-top">
+          <div class="avatar">김</div>
+          <div><div class="founder-name">김수현</div><div class="founder-role">아티언 대표</div></div>
+        </div>
+        <ul>
+          <li>CJ ENM 공채 제작 PD 출신</li>
+          <li>인스타 10만 팔로워 IP 총괄 제작 경험</li>
+          <li>3연속 IP 흥행 달성</li>
+        </ul>
+      </div>
+      <div class="why-cards">
+        <div class="why-card reveal"><span class="why-emoji">💡</span><div><h3>흥행 IP 기획력</h3><p>캐릭터·서사·공감 포인트를 결합한 콘텐츠 설계</p></div></div>
+        <div class="why-card reveal"><span class="why-emoji">🤝</span><div><h3>기업/공공 협업 경험</h3><p>브랜드 메시지를 스토리텔링형 콘텐츠로 전환</p></div></div>
+        <div class="why-card reveal"><span class="why-emoji">🎯</span><div><h3>원스톱 제작·운영</h3><p>캐릭터 개발부터 연재 운영까지 한 팀에서</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec serv" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">제공 서비스</div>
+      <h2>단발 캠페인부터 <span class="hl">월간 운영</span>까지</h2>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal" data-n="01"><div class="serv-tag">신규 개발</div><h3>신규 캐릭터 개발</h3><p>페르소나·말투·설정까지 브랜드 맞춤 설계</p></div>
+      <div class="serv-card reveal" data-n="02"><div class="serv-tag">리뉴얼</div><h3>기존 캐릭터 리디자인</h3><p>웹툰형 콘텐츠에 맞는 비주얼·활용도 개선</p></div>
+      <div class="serv-card reveal" data-n="03"><div class="serv-tag">운영</div><h3>기업 인스타툰 월간 운영</h3><p>기획·작화·캡션·업로드용 제작물 제공</p></div>
+      <div class="serv-card reveal" data-n="04"><div class="serv-tag">캠페인</div><h3>캠페인·공공기관 콘텐츠</h3><p>브랜디드 웹툰, 릴스, 스토리텔링 콘텐츠</p></div>
+    </div>
+    <div class="serv-pills reveal">
+      <span class="pill">프로젝트형</span>
+      <span class="pill">운영형</span>
+      <span class="pill">맞춤형 패키지</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec proof" id="refs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="kicker">협업 브랜드</div>
+      <h2>20개 이상 기업·기관과 <span class="hl">함께했습니다</span></h2>
+    </div>
+    <p class="ref-note reveal">⚠ 아래는 텍스트 타일입니다 — 실제 로고 이미지로 교체하세요</p>
+    <div class="logo-wall">
+      <div class="logo-tile reveal">toss</div>
+      <div class="logo-tile reveal">네이버웹툰</div>
+      <div class="logo-tile reveal">서울특별시</div>
+      <div class="logo-tile reveal">신협</div>
+      <div class="logo-tile reveal">한국산업<br>인력공단</div>
+      <div class="logo-tile reveal">온누리제약</div>
+      <div class="logo-tile reveal">보훈공단</div>
+      <div class="logo-tile reveal">행정안전부</div>
+      <div class="logo-tile reveal">국립<br>농업박물관</div>
+      <div class="logo-tile reveal">삼진제약</div>
+    </div>
+    <div class="case-grid">
+      <div class="case reveal"><div class="case-img">신협 × 밥풀이툰</div><div class="case-b"><div class="who">신협</div><p>메인 캐릭터 '어부바' 활용 사연형 웹툰 제작, 브랜드 호감도 강화</p></div></div>
+      <div class="case reveal"><div class="case-img">산업인력공단 × 밥풀이툰</div><div class="case-b"><div class="who">한국산업인력공단</div><p>다람쥐 캐릭터 개발 및 인스타툰 제작, 기관 메시지를 공감형으로 전달</p></div></div>
+      <div class="case reveal"><div class="case-img">토스·행안부·서울시</div><div class="case-b"><div class="who">브랜디드 웹툰</div><p>직장인 타깃 브랜디드 웹툰, 오가닉 조회수 84만~105만+ 성과</p></div></div>
+    </div>
+    <div class="ref-stats">
+      <div class="rstat reveal"><div class="v">20<span style="font-size:.6em">개사+</span></div><div class="l">협업 브랜드</div></div>
+      <div class="rstat reveal"><div class="v">20<span style="font-size:.6em">건+</span></div><div class="l">프로젝트 진행</div></div>
+      <div class="rstat reveal"><div class="v">100<span style="font-size:.6em">만+</span></div><div class="l">광고툰 평균 조회수</div></div>
+      <div class="rstat reveal"><div class="v">80<span style="font-size:.6em">%+</span></div><div class="l">재협업률</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin:0 auto;text-align:center">
+      <div class="kicker">함께 만들어가요</div>
+      <h2>기업 목적에 맞는 맞춤 솔루션을 제안합니다</h2>
+    </div>
+    <div class="pack-grid">
+      <div class="pack reveal"><div class="pt">프로젝트형</div><p>단발 캠페인, 공공기관 홍보, 시즌성 콘텐츠에 적합</p></div>
+      <div class="pack reveal"><div class="pt">운영형</div><p>월간 인스타툰 운영, 캐릭터 자산화, 지속 팬덤 구축에 적합</p></div>
+    </div>
+    <div class="cta-actions reveal">
+      <a href="mailto:kim@artien.net?subject=%5B%EC%95%84%ED%8B%B0%EC%96%B8%5D%20%ED%98%91%EC%97%85%20%EB%AC%B8%EC%9D%98&body=%EA%B8%B0%EC%97%85%EB%AA%85%3A%0A%EB%8B%B4%EB%8B%B9%EC%9E%90%3A%0A%EB%AC%B8%EC%9D%98%20%EB%82%B4%EC%9A%A9%3A%0A" class="btn btn-dark">📧 협업 문의하기</a>
+      <div class="contact-line">또는 <a href="mailto:kim@artien.net">kim@artien.net</a> 으로 편하게 연락 주세요 · 김수현 대표</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="foot-brand"><span class="dot"></span>아티언 ARTIEN</div>
+      <div class="foot-meta">기업 캐릭터·인스타툰 제작/운영 스튜디오<br>경기도 이천시 · kim@artien.net</div>
+    </div>
+    <div class="foot-links">
+      <a href="#proof">성과</a>
+      <a href="#services">서비스</a>
+      <a href="#refs">협업사례</a>
+      <a href="#contact">문의</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
