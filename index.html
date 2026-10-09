@@ -301,6 +301,12 @@
   .rstat .v{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,32px);color:var(--butter);line-height:1}
   .rstat .l{font-size:13px;opacity:.85;margin-top:8px}
 
+  .fair{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;margin-bottom:12px}
+  .fair img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border:2px solid var(--ink);border-radius:20px}
+  .fair img.sq{aspect-ratio:auto;object-position:center 60%}
+  .fair-cap{font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-bottom:26px}
+  .fair-cap b{color:var(--orange-deep)}
+  @media(max-width:620px){.fair{grid-template-columns:1fr}.fair img.sq{aspect-ratio:1/1}}
   .award-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:860px){.award-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:520px){.award-grid{grid-template-columns:1fr}}
@@ -485,6 +491,11 @@
 
 <section class="sec" id="awards"><div class="wrap">
   <div class="sec-head reveal"><div class="kicker">수상 · 선정</div><h2>공신력 있는 기관이 <span class="hl">인정한</span> IP</h2></div>
+  <div class="fair reveal">
+    <img src="img/fair2026-booth.jpg" alt="캐릭터 라이선싱 페어 2026 아티언 밥풀이 부스와 EXPAND ROOKIE 대상 보드" loading="lazy" width="1400" height="1050">
+    <img class="sq" src="img/fair2026-award.jpg" alt="캐릭터 라이선싱 페어 2026 EXPAND ROOKIE 대상 수상 — 밥풀이" loading="lazy" width="900" height="900">
+  </div>
+  <p class="fair-cap reveal">캐릭터 라이선싱 페어 2026 · 코엑스 — 아티언 밥풀이 부스, <b>EXPAND ROOKIE 대상</b> 수상 (주최 문화체육관광부 · 한국콘텐츠진흥원)</p>
   <div class="award-grid">
     <div class="award top reveal"><span class="badge">수상</span><h3>2026 캐릭터 대상</h3><div class="sub">캐릭터 라이선싱 페어 루키프로젝트 선정</div><div class="org">한국콘텐츠진흥원<span>2026.07</span></div></div>
     <div class="award  reveal"><span class="badge">1위</span><h3>카카오 이모티콘 직장인 선물 1위</h3><div class="sub">밥풀이 카카오 이모티콘</div><div class="org">카카오 이모티콘샵<span>2026.06</span></div></div>
