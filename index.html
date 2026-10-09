@@ -34,7 +34,8 @@
   "jobTitle": "대표",
   "description": "CJ ENM 공채 제작 PD 출신. 오느리툰 총괄 제작, 사피·오느리·밥풀이 3연속 IP 흥행."
  },
- "award": ["2026 캐릭터 대상 (한국콘텐츠진흥원, 캐릭터 라이선싱 페어 루키프로젝트)", "2026 만화웹툰분야 창업기업 육성 지원사업 선정 (한국콘텐츠진흥원)", "2026 K-콘텐츠 IP융복합 제작지원사업 선정 (경기콘텐츠진흥원)", "카카오 이모티콘 직장인 선물 이모티콘 1위 (2026)"],
+ "award": ["2026 캐릭터 대상 (한국콘텐츠진흥원, 캐릭터 라이선싱 페어 루키프로젝트)", "2026 만화웹툰분야 창업기업 육성 지원사업 선정 (한국콘텐츠진흥원)", "2026 K-콘텐츠 IP융복합 제작지원사업 선정 (경기콘텐츠진흥원)", "카카오 이모티콘 직장인 선물 이모티콘 1위 (2026)", "사업화 자금 A등급 선정 (이천시)", "청년 우수 창업 기업 표창 (이천시청년창업지원센터, 2026)"],
+ "subjectOf": {"@type": "Article", "headline": "인간적 매력으로 대중을 사로잡는 1인 창작자들", "url": "https://work.moongong.co.kr/webzine/html/n_content/kocca_vol41/sub_2_2.html", "publisher": {"@type": "Organization", "name": "한국콘텐츠진흥원"}, "isPartOf": "N콘텐츠 매거진 vol.41"},
  "knowsAbout": [
   "캐릭터 IP 개발",
   "기업 캐릭터 제작",
@@ -115,7 +116,7 @@
    "name": "아티언은 어떤 수상 실적이 있나요?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "아티언은 2026년 한국콘텐츠진흥원 캐릭터 라이선싱 페어 루키프로젝트에 선정되어 '2026 캐릭터 대상'을 받았습니다. 한국콘텐츠진흥원 만화웹툰분야 창업기업 육성 지원사업과 경기콘텐츠진흥원 K-콘텐츠 IP융복합 제작지원사업에도 선정되었고, 밥풀이 카카오 이모티콘은 직장인 선물 이모티콘 1위를 기록했습니다."
+    "text": "아티언은 2026년 한국콘텐츠진흥원 캐릭터 라이선싱 페어 루키프로젝트에 선정되어 '2026 캐릭터 대상'을 받았습니다. 한국콘텐츠진흥원 만화웹툰분야 창업기업 육성 지원사업과 경기콘텐츠진흥원 K-콘텐츠 IP융복합 제작지원사업에도 선정되었고, 이천시 사업화 자금 A등급 선정, 이천시청년창업지원센터 청년 우수 창업 기업 표창을 받았습니다. 밥풀이 카카오 이모티콘은 직장인 선물 이모티콘 1위를 기록했고, 한국콘텐츠진흥원 N콘텐츠 매거진에 인터뷰가 실렸습니다."
    }
   },
   {
@@ -300,7 +301,9 @@
   .rstat .v{font-family:var(--display);font-weight:800;font-size:clamp(24px,3vw,32px);color:var(--butter);line-height:1}
   .rstat .l{font-size:13px;opacity:.85;margin-top:8px}
 
-  .award-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+  .award-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.award-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.award-grid{grid-template-columns:1fr}}
   .award{background:var(--paper);border:2px solid var(--ink);border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:8px;transition:transform .2s}
   .award:hover{transform:translateY(-4px)}
   .award.top{background:var(--butter)}
@@ -309,6 +312,13 @@
   .award .sub{font-size:13.5px;color:var(--ink-soft)}
   .award .org{margin-top:auto;padding-top:8px;font-size:13px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;gap:8px}
   .award .org span{color:var(--ink-soft);font-weight:600}
+  .press{margin-top:34px;display:flex;gap:20px;align-items:center;background:var(--ink);color:#fff;border-radius:20px;padding:26px 28px;transition:transform .2s}
+  .press:hover{transform:translateY(-3px)}
+  .press .pk{font-family:var(--hand);color:var(--butter);font-size:15px;margin-bottom:6px}
+  .press h3{font-size:clamp(17px,2.2vw,21px);font-weight:800;line-height:1.35}
+  .press p{font-size:14px;opacity:.8;margin-top:6px}
+  .press .go{margin-left:auto;flex-shrink:0;font-weight:800;color:var(--butter);white-space:nowrap}
+  @media(max-width:620px){.press{flex-direction:column;align-items:flex-start}.press .go{margin-left:0}}
   .faq-list{display:flex;flex-direction:column;gap:12px;max-width:820px}
   .faq-item{background:var(--paper);border:1.5px solid var(--line);border-radius:16px;padding:0 22px;transition:border-color .2s}
   .faq-item[open]{border-color:var(--butter)}
@@ -480,7 +490,13 @@
     <div class="award  reveal"><span class="badge">1위</span><h3>카카오 이모티콘 직장인 선물 1위</h3><div class="sub">밥풀이 카카오 이모티콘</div><div class="org">카카오 이모티콘샵<span>2026.06</span></div></div>
     <div class="award  reveal"><span class="badge">선정</span><h3>만화웹툰분야 창업기업 육성 지원사업</h3><div class="sub">2026 정부 지원사업</div><div class="org">한국콘텐츠진흥원<span>2026.05</span></div></div>
     <div class="award  reveal"><span class="badge">선정</span><h3>K-콘텐츠 IP융복합 제작지원사업</h3><div class="sub">2026 정부 지원사업</div><div class="org">경기콘텐츠진흥원<span>2026.06</span></div></div>
+    <div class="award reveal"><span class="badge">A등급</span><h3>사업화 자금 A등급 선정</h3><div class="sub">창업기업 사업화 지원</div><div class="org">이천시<span></span></div></div>
+    <div class="award reveal"><span class="badge">표창</span><h3>청년 우수 창업 기업 표창</h3><div class="sub">우수 창업 기업 선정</div><div class="org">이천시청년창업지원센터<span>2026.08</span></div></div>
   </div>
+  <a class="press reveal" href="https://work.moongong.co.kr/webzine/html/n_content/kocca_vol41/sub_2_2.html" target="_blank" rel="noopener">
+    <div><div class="pk">미디어 · 인터뷰</div><h3>“인간적 매력으로 대중을 사로잡는 1인 창작자들”</h3><p>한국콘텐츠진흥원 N콘텐츠 매거진 vol.41 — 밥풀이툰 김수현 대표 인터뷰</p></div>
+    <span class="go">기사 보기 →</span>
+  </a>
 </div></section>
 
 <section class="sec" id="faq"><div class="wrap">
@@ -490,7 +506,7 @@
     <details class="faq-item reveal"><summary>밥풀이툰은 누가 만들었나요?</summary><p>밥풀이툰은 아티언이 제작하는 오리지널 인스타툰입니다. 병아리 캐릭터 &#x27;밥풀이&#x27;가 주인공인 직장인 공감 웹툰으로, 광고 없이 팔로워 3.7만 명 이상, 월 조회수 3,400만 회, 릴스 최고 조회수 182만 회를 기록했습니다.</p></details>
     <details class="faq-item reveal"><summary>기업 캐릭터나 인스타툰 제작은 어디에 맡기면 좋나요?</summary><p>캐릭터 디자인뿐 아니라 연재 콘텐츠와 운영까지 함께 해본 팀에 맡기는 것이 좋습니다. 아티언은 캐릭터 페르소나 설계부터 에피소드 기획·콘티·작화·캡션, 월간 운영까지 한 팀에서 원스톱으로 진행합니다.</p></details>
     <details class="faq-item reveal"><summary>아티언은 어떤 기업·기관과 협업했나요?</summary><p>토스, 네이버웹툰, 서울특별시, 신협, 한국산업인력공단, 행정안전부, 한국보훈복지의료공단, 국립농업박물관, 온누리제약, 삼진제약 등 25개사 이상과 협업했습니다. 광고툰 평균 조회수는 100만 회 이상, 재협업률은 80% 이상입니다.</p></details>
-    <details class="faq-item reveal"><summary>아티언은 어떤 수상 실적이 있나요?</summary><p>아티언은 2026년 한국콘텐츠진흥원 캐릭터 라이선싱 페어 루키프로젝트에 선정되어 '2026 캐릭터 대상'을 받았습니다. 한국콘텐츠진흥원 만화웹툰분야 창업기업 육성 지원사업과 경기콘텐츠진흥원 K-콘텐츠 IP융복합 제작지원사업에도 선정되었고, 밥풀이 카카오 이모티콘은 직장인 선물 이모티콘 1위를 기록했습니다.</p></details>
+    <details class="faq-item reveal"><summary>아티언은 어떤 수상 실적이 있나요?</summary><p>아티언은 2026년 한국콘텐츠진흥원 캐릭터 라이선싱 페어 루키프로젝트에 선정되어 '2026 캐릭터 대상'을 받았습니다. 한국콘텐츠진흥원 만화웹툰분야 창업기업 육성 지원사업과 경기콘텐츠진흥원 K-콘텐츠 IP융복합 제작지원사업에도 선정되었고, 이천시 사업화 자금 A등급 선정, 이천시청년창업지원센터 청년 우수 창업 기업 표창을 받았습니다. 밥풀이 카카오 이모티콘은 직장인 선물 이모티콘 1위를 기록했고, 한국콘텐츠진흥원 N콘텐츠 매거진에 인터뷰가 실렸습니다.</p></details>
     <details class="faq-item reveal"><summary>아티언 대표는 어떤 경력을 갖고 있나요?</summary><p>김수현 대표는 CJ ENM 공채 제작 PD 출신으로, 인스타그램 팔로워 10만 명의 오느리툰을 총괄 제작했습니다. 사피·오느리·밥풀이까지 3개의 IP를 연속으로 흥행시켰습니다.</p></details>
     <details class="faq-item reveal"><summary>어떤 서비스를 제공하나요?</summary><p>신규 캐릭터 개발, 기존 캐릭터 리디자인, 기업 인스타툰 월간 운영, 캠페인·공공기관 브랜디드 웹툰과 릴스 제작을 제공합니다. 단발성 프로젝트형과 월간 운영형 중 목적에 맞게 선택할 수 있습니다.</p></details>
     <details class="faq-item reveal"><summary>협업 문의는 어떻게 하나요?</summary><p>이메일 kim@artien.net으로 기업명, 담당자, 문의 내용을 보내주시면 맞춤 제안을 드립니다.</p></details>
