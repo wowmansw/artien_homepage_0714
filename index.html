@@ -44,7 +44,8 @@
   "브랜디드 웹툰",
   "캐릭터 마케팅",
   "캐릭터 굿즈 제작",
-  "굿즈 크라우드펀딩"
+  "굿즈 크라우드펀딩",
+  "캐릭터 애니메이션 제작"
  ],
  "sameAs": [
   "https://www.instagram.com/bab.toon/"
@@ -134,7 +135,7 @@
    "name": "어떤 서비스를 제공하나요?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "신규 캐릭터 개발, 기존 캐릭터 리디자인, 기업 인스타툰 월간 운영, 캠페인·공공기관 브랜디드 웹툰과 릴스 제작, 캐릭터 굿즈 제작과 크라우드펀딩 운영을 제공합니다. 캐릭터 개발부터 연재 운영, 굿즈 사업화까지 한 팀에서 이어서 진행할 수 있고, 단발성 프로젝트형과 월간 운영형 중 목적에 맞게 선택할 수 있습니다."
+    "text": "신규 캐릭터 개발, 기존 캐릭터 리디자인, 기업 인스타툰 월간 운영, 캠페인·공공기관 브랜디드 웹툰과 릴스 제작, 캐릭터 굿즈 제작과 크라우드펀딩 운영, 캐릭터 애니메이션 제작을 제공합니다. 캐릭터 개발부터 연재 운영, 굿즈 사업화까지 한 팀에서 이어서 진행할 수 있고, 단발성 프로젝트형과 월간 운영형 중 목적에 맞게 선택할 수 있습니다."
    }
   },
   {
@@ -164,7 +165,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.6;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
@@ -336,6 +337,21 @@
   .award.fund .sub{font-size:14px;color:var(--ink-soft);line-height:1.6}
   .award.fund .org{margin-top:4px;padding-top:0}
   @media(max-width:700px){.award.fund{flex-direction:column;align-items:stretch}.award.fund .shot{width:100%}}
+  .motion-grid{display:grid;grid-template-columns:320px 1fr;gap:36px;align-items:center}
+  .reel{position:relative;width:320px;border:2px solid var(--ink);border-radius:22px;overflow:hidden;background:var(--ink);box-shadow:var(--shadow-lift);cursor:pointer;line-height:0}
+  .reel video{width:100%;height:auto;display:block;aspect-ratio:9/16;object-fit:cover}
+  .reel video.reel-full{display:none}
+  .reel.playing video.reel-full{display:block}
+  .reel.playing .reel-preview,.reel.playing .reel-play,.reel.playing .reel-dur{display:none}
+  .reel-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:none;background:rgba(255,255,255,.92);color:var(--ink);font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding-left:4px;box-shadow:var(--shadow);transition:transform .2s}
+  .reel:hover .reel-play{transform:translate(-50%,-50%) scale(1.08)}
+  .reel-dur{position:absolute;right:10px;bottom:10px;background:rgba(36,28,21,.78);color:#fff;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;line-height:1.6}
+  .motion-copy .who{font-family:var(--hand);color:var(--orange-deep);font-size:16px;margin-bottom:8px}
+  .motion-copy h3{font-size:clamp(20px,2.6vw,26px);font-weight:800;line-height:1.3;margin-bottom:12px}
+  .motion-copy p{color:var(--ink-soft);font-size:15.5px;margin-bottom:18px;max-width:520px}
+  .motion-copy ul{list-style:none;display:flex;flex-wrap:wrap;gap:9px}
+  .motion-copy li{font-size:14px;font-weight:700;background:var(--paper);border:1.5px solid var(--line);padding:8px 15px;border-radius:999px}
+  @media(max-width:860px){.motion-grid{grid-template-columns:1fr;gap:24px;justify-items:center}.motion-copy{text-align:center}.motion-copy p{margin-left:auto;margin-right:auto}.motion-copy ul{justify-content:center}}
   .press{margin-top:34px;display:flex;gap:20px;align-items:center;background:var(--ink);color:#fff;border-radius:20px;padding:26px 28px;transition:transform .2s}
   .press:hover{transform:translateY(-3px)}
   .press .pk{font-family:var(--hand);color:var(--butter);font-size:15px;margin-bottom:6px}
@@ -394,7 +410,7 @@
 
 <nav><div class="wrap nav-in">
   <a href="#top" class="brand"><span class="dot"></span>아티언</a>
-  <div class="nav-links"><a href="#proof">성과</a><a href="#services">서비스</a><a href="#refs">협업사례</a><a href="#awards">수상·선정</a><a href="#faq">FAQ</a><a href="#contact">문의</a></div>
+  <div class="nav-links"><a href="#proof">성과</a><a href="#services">서비스</a><a href="#refs">협업사례</a><a href="#motion">영상</a><a href="#awards">수상·선정</a><a href="#faq">FAQ</a><a href="#contact">문의</a></div>
   <a href="#contact" class="nav-cta">협업 문의하기</a>
 </div></nav>
 
@@ -484,7 +500,8 @@
     <div class="serv-card reveal" data-n="02"><div class="serv-tag">리뉴얼</div><h3>기존 캐릭터 리디자인</h3><p>웹툰형 콘텐츠에 맞는 비주얼·활용도 개선</p></div>
     <div class="serv-card reveal" data-n="03"><div class="serv-tag">운영</div><h3>기업 인스타툰 월간 운영</h3><p>기획·작화·캡션·업로드용 제작물 제공</p></div>
     <div class="serv-card reveal" data-n="04"><div class="serv-tag">캠페인</div><h3>캠페인·공공기관 콘텐츠</h3><p>브랜디드 웹툰, 릴스, 스토리텔링 콘텐츠</p></div>
-    <div class="serv-card wide reveal" data-n="05"><div class="serv-tag">굿즈·사업화</div><h3>캐릭터 굿즈 제작·크라우드펀딩</h3><p>굿즈 기획·제작부터 펀딩 운영까지, 캐릭터를 상품으로 연결</p></div>
+    <div class="serv-card reveal" data-n="05"><div class="serv-tag">굿즈·사업화</div><h3>캐릭터 굿즈 제작·크라우드펀딩</h3><p>굿즈 기획·제작부터 펀딩 운영까지, 캐릭터를 상품으로 연결</p></div>
+    <div class="serv-card reveal" data-n="06"><div class="serv-tag">영상</div><h3>캐릭터 애니메이션 제작</h3><p>기획·콘티·작화·편집까지, 릴스/쇼츠용 영상 원스톱</p></div>
   </div>
   <div class="serv-pills reveal"><span class="pill">프로젝트형</span><span class="pill">운영형</span><span class="pill">맞춤형 패키지</span></div>
 </div></section>
@@ -508,6 +525,24 @@
     <div class="rstat reveal"><div class="v">26<span style="font-size:.6em">건+</span></div><div class="l">프로젝트 진행</div></div>
     <div class="rstat reveal"><div class="v">100<span style="font-size:.6em">만+</span></div><div class="l">광고툰 평균 조회수</div></div>
     <div class="rstat reveal"><div class="v">80<span style="font-size:.6em">%+</span></div><div class="l">재협업률</div></div>
+  </div>
+</div></section>
+
+<section class="sec" id="motion"><div class="wrap">
+  <div class="sec-head reveal"><div class="kicker">영상 · 애니메이션</div><h2>캐릭터를 <span class="hl">움직이게</span> 만듭니다</h2><p class="sec-sub">기획·콘티·작화·편집까지, 웹툰을 만든 같은 팀이 영상으로 이어서 제작합니다.</p></div>
+  <div class="motion-grid">
+    <div class="reel reveal" role="button" tabindex="0" aria-label="서울시 남산 곤돌라 홍보 애니메이션 전체 영상 재생">
+      <video class="reel-preview" src="img/seoul-gondola-preview.mp4" poster="img/seoul-gondola-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <video class="reel-full" src="img/seoul-gondola.mp4" poster="img/seoul-gondola-poster.jpg" playsinline preload="none"></video>
+      <button class="reel-play" type="button" aria-label="전체 영상 재생">&#9654;</button>
+      <span class="reel-dur">1:25</span>
+    </div>
+    <div class="motion-copy reveal">
+      <div class="who">서울특별시 &times; 밥풀이툰</div>
+      <h3>남산 곤돌라 홍보 애니메이션</h3>
+      <p>서울시 남산 곤돌라 사업을 직장인 일상 에피소드로 풀어낸 1분 25초 애니메이션입니다. 공공 정책을 공감 가는 이야기로 바꿔 전달했습니다.</p>
+      <ul><li>기획 · 시나리오</li><li>캐릭터 작화</li><li>애니메이션</li><li>자막 · 편집</li></ul>
+    </div>
   </div>
 </div></section>
 
@@ -552,7 +587,7 @@
     <details class="faq-item reveal"><summary>아티언은 어떤 기업·기관과 협업했나요?</summary><p>토스, 네이버웹툰, 서울특별시, 신협, 한국산업인력공단, 행정안전부, 한국보훈복지의료공단, 국립농업박물관, 온누리제약, 삼진제약, 포토이즘, 스픽 등 25개사 이상과 협업했습니다. 광고툰 평균 조회수는 100만 회 이상, 재협업률은 80% 이상입니다.</p></details>
     <details class="faq-item reveal"><summary>아티언은 어떤 수상 실적이 있나요?</summary><p>아티언은 2026년 한국콘텐츠진흥원 캐릭터 라이선싱 페어 루키프로젝트에 선정되어 '루키 캐릭터 대상'을 받았습니다. 한국콘텐츠진흥원 만화웹툰분야 창업기업 육성 지원사업과 경기콘텐츠진흥원 K-콘텐츠 IP융복합 제작지원사업에도 선정되었고, 이천시 사업화 자금 A등급 선정, 이천시청년창업지원센터 청년 우수 창업 기업 표창을 받았습니다. 밥풀이 카카오 이모티콘은 직장인 선물 이모티콘 1위를 기록했고, 굿즈 크라우드펀딩 &lt;밥풀이툰&gt; 직장인 생존키트는 목표액의 300%인 1,503만 원을 모았습니다. 한국콘텐츠진흥원 N콘텐츠 매거진에 인터뷰가 실렸습니다.</p></details>
     <details class="faq-item reveal"><summary>아티언 대표는 어떤 경력을 갖고 있나요?</summary><p>김수현 대표는 CJ ENM 공채 제작 PD 출신으로, 인스타그램 팔로워 10만 명의 오느리툰을 총괄 제작했습니다. 유튜브 구독자 200만 명의 &lt;사피엔스 스튜디오&gt; 사피 캐릭터도 제작했습니다. 사피·오느리·밥풀이까지 3개의 IP를 연속으로 흥행시켰습니다.</p></details>
-    <details class="faq-item reveal"><summary>어떤 서비스를 제공하나요?</summary><p>신규 캐릭터 개발, 기존 캐릭터 리디자인, 기업 인스타툰 월간 운영, 캠페인·공공기관 브랜디드 웹툰과 릴스 제작, 캐릭터 굿즈 제작과 크라우드펀딩 운영을 제공합니다. 캐릭터 개발부터 연재 운영, 굿즈 사업화까지 한 팀에서 이어서 진행할 수 있고, 단발성 프로젝트형과 월간 운영형 중 목적에 맞게 선택할 수 있습니다.</p></details>
+    <details class="faq-item reveal"><summary>어떤 서비스를 제공하나요?</summary><p>신규 캐릭터 개발, 기존 캐릭터 리디자인, 기업 인스타툰 월간 운영, 캠페인·공공기관 브랜디드 웹툰과 릴스 제작, 캐릭터 굿즈 제작과 크라우드펀딩 운영, 캐릭터 애니메이션 제작을 제공합니다. 캐릭터 개발부터 연재 운영, 굿즈 사업화까지 한 팀에서 이어서 진행할 수 있고, 단발성 프로젝트형과 월간 운영형 중 목적에 맞게 선택할 수 있습니다.</p></details>
     <details class="faq-item reveal"><summary>협업 문의는 어떻게 하나요?</summary><p>이메일 kim@artien.net으로 기업명, 담당자, 문의 내용을 보내주시면 맞춤 제안을 드립니다.</p></details>
   </div>
 </div></section>
@@ -572,11 +607,17 @@
 
 <footer><div class="wrap foot-in">
   <div><div class="foot-brand"><span class="dot"></span>아티언 ARTIEN</div><div class="foot-meta">&lt;밥풀이툰&gt;을 만든 캐릭터 IP 스튜디오 · 기업 캐릭터·인스타툰 제작/운영<br>kim@artien.net · 대표 김수현</div></div>
-  <div class="foot-links"><a href="#proof">성과</a><a href="#services">서비스</a><a href="#refs">협업사례</a><a href="#faq">FAQ</a><a href="https://www.instagram.com/bab.toon/" target="_blank" rel="noopener">Instagram @bab.toon</a></div>
+  <div class="foot-links"><a href="#proof">성과</a><a href="#services">서비스</a><a href="#refs">협업사례</a><a href="#motion">영상</a><a href="#faq">FAQ</a><a href="https://www.instagram.com/bab.toon/" target="_blank" rel="noopener">Instagram @bab.toon</a></div>
 </div></footer>
 
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  document.querySelectorAll('.reel').forEach(r=>{
+    const open=()=>{if(r.classList.contains('playing'))return;r.classList.add('playing');
+      const f=r.querySelector('.reel-full');f.controls=true;f.muted=false;f.play().catch(()=>{});};
+    r.addEventListener('click',e=>{if(!e.target.closest('.reel-full'))open();});
+    r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  });
 </script>
 </body></html>
